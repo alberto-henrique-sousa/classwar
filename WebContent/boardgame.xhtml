@@ -1,0 +1,88 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+		<ui:composition>
+			<div id="divBoardgame">
+			<c:forEach var="y" begin="1" end="4">
+				<c:set var="letter" value="#{engineBean.convertIndexLetter(y)}" />
+				<section class="row">
+					<article class="col">
+						<div class="col-letter">
+							<c:if test="#{gameBean.team == 1}">
+								<div id="unit_team_1_${letter}" class="div-title-unit"><!-- ${letter} --></div>
+							</c:if>
+							<c:if test="#{gameBean.team == 2}">
+								<div id="unit_team_2_${letter}" class="div-title-unit"><!-- ${letter} --></div>
+							</c:if>
+						</div>
+					</article>
+					<c:forEach var="x" begin="1" end="13">
+						<article class="col">
+							<c:if test="#{12 >= x}">
+<!-- 								<div class="col-number">
+									<c:if test="#{y == 1}">
+										<div class="div-title-unit">#{gameBean.indexBoard(x)}</div>
+									</c:if>					
+								</div>
+ -->								<div class="divId">
+									<div class="divTitleCell">${letter}#{gameBean.indexBoard(x)}</div>
+									<div class="div-subtitle-unit">
+										<div class="div-life">
+											<div style="width: #{gameBean.lifeUnit(y-1, (gameBean.indexBoard(x)-1))}%" class="divLife"></div>
+										</div>
+									</div>									
+									<div class="div-name-player-unit">#{gameBean.namePleryUnit(y-1, (gameBean.indexBoard(x)-1))}</div>
+								</div>
+								<div class="divUnitGeneral">
+									<div id="unit_${letter}#{gameBean.indexBoard(x)}" class="#{gameBean.cssUnit(y-1, (gameBean.indexBoard(x)-1))}"></div>
+								</div>
+								<div class="tooltiptext">
+									<div class="titleTootip">
+										(${letter}#{gameBean.indexBoard(x)})
+									</div>
+									<div class="titleTootip">
+										#{gameBean.titleUnit(y-1, gameBean.indexBoard(x)-1)}
+									</div>
+									<div>
+										#{gameBean.agilityUnit(y-1, gameBean.indexBoard(x)-1)}
+									</div>
+									<div>
+										#{gameBean.forceUnit(y-1, gameBean.indexBoard(x)-1)}
+									</div>
+									<div>
+										#{gameBean.attackUnit(y-1, gameBean.indexBoard(x)-1)}
+									</div>
+									<div>
+										#{gameBean.defenseUnit(y-1, gameBean.indexBoard(x)-1)}
+									</div>		                            	
+									<div>
+										#{gameBean.costUnit(y-1, gameBean.indexBoard(x)-1)}
+									</div>		                            	
+									<div>
+										#{gameBean.costChampionUnit(y-1, gameBean.indexBoard(x)-1)}
+									</div>		                            	
+									<div>
+										#{gameBean.bonusUnit(y-1, gameBean.indexBoard(x)-1)}
+									</div>		                            	
+								</div>
+							</c:if>
+							<c:if test="${x == 13}">
+								<div class="col-letter">
+									<c:if test="#{gameBean.team == 1}">
+										<div id="unit_team_2_${letter}" class="div-title-unit"><!-- ${letter} --></div>
+									</c:if>	
+									<c:if test="#{gameBean.team == 2}">
+										<div id="unit_team_1_${letter}" class="div-title-unit"><!-- ${letter} --></div>
+									</c:if>	
+								</div>
+							</c:if>
+						</article>
+					</c:forEach>
+				</section>
+			</c:forEach>      
+			</div>
+		</ui:composition>      
+</html>

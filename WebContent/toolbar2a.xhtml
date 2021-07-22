@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+		<ui:composition>
+                <div class="toolbar">
+                	<section class="rowToolbar">
+                		<article class="colToolbar1">
+	               			<p:outputPanel rendered="#{gameBean.currentPlayer != null}">
+								<h:graphicImage library="images" name="buttons/button-money.png"/>
+								<p:outputLabel styleClass="goldTeam">#{gameBean.currentPlayer.gold}</p:outputLabel>
+	                		</p:outputPanel>
+                		</article>
+                		<article class="colToolbar1">
+	               			<p:outputPanel rendered="#{gameBean.currentPlayer != null}">
+		                        <div class="panelStatus">
+		                        	<div style="background-image: url('/classwar/resources/images/player #{gameBean.currentPlayer.team}.png'); background-repeat: no-repeat; padding-left: 18px; padding-bottom: 3px;">
+		                            	<span class="panelStatusText">#{gameBean.currentPlayer.name}</span>
+		                            </div>
+	    	                    </div>
+	    	                </p:outputPanel>    
+						</article>                	
+                	</section>
+                </div>		
+		</ui:composition>      
+</html>

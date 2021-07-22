@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+		<ui:composition>
+                <div class="toolbar">
+                	<section class="rowToolbar rowToolbarRight">
+                		<article class="colToolbar2">
+							<p:commandLink actionListener="#{gameBean.fullEditor}">
+								<h:graphicImage id="buttonFullEditor" library="images" name="buttons/button-up.png"/>
+							</p:commandLink>
+							<div class="tooltiptext">
+								<span>Expandir/Retrair Editor</span>
+							</div>
+						</article>                	
+                		<article class="colToolbar2">
+							<p:commandLink actionListener="#{gameBean.showGrid}">
+								<h:graphicImage library="images" name="buttons/button-grid.png"/>
+							</p:commandLink>
+							<div class="tooltiptext">
+								<span>Mostrar/Ocultar linhas de grade</span>
+							</div>
+						</article>                	
+                		<article class="colToolbar2">
+                			<p:link target="_blank" outcome="monitor.xhtml"> 
+								<h:graphicImage library="images" name="buttons/button-console.png"/>
+							</p:link>
+							<div class="tooltiptext">
+								<span>Console</span>
+							</div>
+						</article>                	
+                		<article class="colToolbar2">
+	               			<p:outputPanel rendered="#{gameBean.currentPlayer != null}">
+								<h:graphicImage library="images" name="buttons/button-timer.png"/>
+		        				<p:outputLabel id="startTime" styleClass="startTime">#{engineBean.startTime}</p:outputLabel>
+	                		</p:outputPanel>
+							<div class="tooltiptext">
+								<span>Tempo do jogo, horas e minutos</span>
+							</div>
+                		</article>
+                		<article class="colToolbar2">
+	               			<p:outputPanel rendered="#{gameBean.currentPlayer != null}">
+								<p:commandLink actionListener="#{gameBean.autoSendCode}" update="formGame:btnAutoSendCode" disabled="#{gameBean.currentPlayer == null || gameBean.currentPlayer.wait}">
+									<h:graphicImage id="btnAutoSendCode" library="images" name="buttons/button-#{gameBean.imageAutoBtnSend()}.png" height="35" width="64"/>
+								</p:commandLink>	               			
+	                		</p:outputPanel>
+							<div class="tooltiptext">
+								<span>Habilita/Desabilita o envio automático do código.</span>
+							</div>
+                		</article>
+                		<article class="colToolbar2">
+	               			<p:outputPanel rendered="#{gameBean.currentPlayer != null}">
+								<p:commandLink id="btnSendCode" widgetVar="btnSendCode" actionListener="#{gameBean.sendCode}" onclick="PF('statusDialog').show()" update="formGame:btnSendCode formGame:btnAutoSendCode" disabled="#{gameBean.currentPlayer == null || gameBean.currentPlayer.wait}">
+									<h:graphicImage library="images" name="buttons/button-#{gameBean.imageBtnSend()}.png" height="45" width="92"/>
+								</p:commandLink>				        			
+	                		</p:outputPanel>
+							<div class="tooltiptext">
+								<span>Enviar o seu código</span>
+							</div>
+                		</article>
+                	</section>                	
+                </div>		
+		</ui:composition>      
+</html>

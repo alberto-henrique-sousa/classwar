@@ -1,0 +1,744 @@
+.battleField {
+	width: 100%;
+	height: 450px;
+	background-image: url('/classwar/resources/images/background/classwar - background - castles.png?v=2');
+	background-repeat: repeat-x;
+	color: white;
+	position: relative;
+	z-index: 1;
+}
+
+.divUnitGeneral {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+#divBoardgame {
+	width: 100%; 
+	position: absolute; 
+	z-index: 3;
+	margin-top: 10px;
+	/*font-size: 0.9em;*/
+}
+
+.divUnit {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	width: 43px;
+	height: 60px;
+}
+
+.divTitleCell {
+	font-size: 0.7em;	
+	position: absolute;
+	margin-top: 8px;
+	margin-left: 5px;
+}
+
+.divId {
+	background-image: url('/classwar/resources/images/buttons/button-id.png?v=2');
+	background-repeat: no-repeat;
+	width: 80px;
+	height: 32px;
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	opacity: 0.85;
+    filter: alpha(opacity=85); /* For IE8 and earlier */
+}
+
+#linkGrid {
+	margin-right: 20px;
+	margin-top: 10px;
+	cursor:pointer;
+}
+
+.row {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+}
+
+.col {
+	width: 300px;
+	height: 105px;
+}
+
+.col-number {
+	height: 15px;
+}
+
+.col-letter {
+	padding-top: 45px;
+}
+
+.toolbar {
+	margin: 0px 10px 0px 10px;
+}
+
+.rowToolbar {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+}
+
+.rowToolbarRight {
+ 	justify-content: flex-end;
+}
+
+.colToolbar1 {
+	padding: 0px 15px 5px 0px;
+}
+
+.colToolbar2 {
+	padding: 0px 0px 5px 15px;
+}
+
+.tooltipfailed {
+	top: 95%;
+	width: 150px;
+    position: absolute;
+    z-index: 98;
+}
+
+.col .tooltiptext, .colToolbar1 .tooltiptext, .colToolbar2 .tooltiptext {
+    visibility: hidden;
+    background-color: #2f3748;
+    color: #fff;
+    text-align: left;
+    padding: 5px 5px 5px 5px;
+    position: absolute;
+    z-index: 99;
+    border-radius: 5px;
+}
+
+.titleTootip {
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.col:hover .tooltiptext, .colToolbar1:hover .tooltiptext, .colToolbar2:hover .tooltiptext {
+    visibility: visible;
+}
+
+.div-title-unit {
+	text-shadow: 2px 2px black;
+	font-size: 0.8em;
+}
+
+.div-name-player-unit {
+	font-size: 0.5em;
+	/*text-shadow: 2px 2px black;*/
+	overflow: hidden;
+	/*height: 12px;*/	
+	width: 45px;
+	margin-top: 2px;
+	position: absolute;
+	margin-top: 10px;
+	margin-left: 29px;
+}
+
+.div-title-unit-max {
+	text-shadow: 2px 2px black;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+.div-subtitle-unit {
+	text-align: center;
+	width: 100%;
+	height: 5px;
+}
+
+.div-life {
+	/*border: 1px solid white;*/
+	width: 45px;
+	height: 5px;
+	margin-left: auto; 
+	margin-right: auto;
+	margin-top: 3px;
+	position: absolute;
+	margin-top: 7px;
+	margin-left: 28px;
+	border-radius: 25px; 		
+}
+
+.divLife {
+	background-color: #9b0508; 
+	height: 100%;
+	border-radius: 25px;	 	
+}
+
+
+.champion-green {
+	webkit-filter: drop-shadow(0px 8px 8px #357F20);
+  	filter: drop-shadow(0px 8px 8px #357F20);	
+}
+
+.champion-purple {
+	webkit-filter: drop-shadow(0px 8px 8px #872021);
+  	filter: drop-shadow(0px 8px 8px #872021);
+}
+
+/* dead */
+
+.animation-green-dead  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/green - dead.png?v=2');
+	width: 59.33px;
+	height: 60px;
+	-webkit-animation: animation-cycle-dead 1.0s steps(6) forwards;
+	animation: animation-cycle-dead 1.0s steps(6) forwards;
+}
+
+.animation-purple-dead  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/purple - dead.png?v=2');
+	width: 59.33px;
+	height: 60px;
+	-webkit-animation: animation-cycle-dead 1.0s steps(6) forwards;
+	animation: animation-cycle-dead 1.0s steps(6) forwards;
+}
+
+@-webkit-keyframes animation-cycle-dead {
+	from { background-position: 0px; }
+	to { background-position: -356px; }
+}
+
+@Keyframes animation-cycle-dead {
+	from { background-position: 0px; }
+	to { background-position: -356px; }
+}      
+
+/* warrior */
+
+.animation-warrior-green-idle  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/warrior - green - idle.png?v=2');
+	width: 33.5px;
+	height: 60px;
+	-webkit-animation: animation-cycle-warrior-idle 1.0s steps(6) infinite;
+	animation: animation-cycle-warrior-idle 1.0s steps(6) infinite;
+}
+
+.animation-warrior-purple-idle  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/warrior - purple - idle.png?v=2');
+	width: 33.5px;
+	height: 60px;
+	-webkit-animation: animation-cycle-warrior-idle 1.0s steps(6) infinite;
+	animation: animation-cycle-warrior-idle 1.0s steps(6) infinite;
+}
+
+@-webkit-keyframes animation-cycle-warrior-idle {
+	from { background-position: 0px; }
+	to { background-position: -201px; }
+}
+
+@Keyframes animation-cycle-warrior-idle {
+	from { background-position: 0px; }
+	to { background-position: -201px; }
+}      
+
+.animation-warrior-green-run  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/warrior - green - run.png?v=2');
+	width: 42.125px;
+	height: 60px;
+	-webkit-animation: animation-cycle-warrior-run 1.0s steps(8) infinite;
+	animation: animation-cycle-warrior-run 1.0s steps(8) infinite;
+}
+
+.animation-warrior-purple-run  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/warrior - purple - run.png?v=2');
+	width: 42.125px;
+	height: 60px;
+	-webkit-animation: animation-cycle-warrior-run 1.0s steps(8) infinite;
+	animation: animation-cycle-warrior-run 1.0s steps(8) infinite;
+}
+
+@-webkit-keyframes animation-cycle-warrior-run {
+	from { background-position: 0px; }
+	to { background-position: -337px; }
+}
+
+@Keyframes animation-cycle-warrior-run {
+	from { background-position: 0px; }
+	to { background-position: -337px; }
+}      
+
+.animation-warrior-green-attack  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/warrior - green - attack.png?v=2');
+	width: 47.75px;
+	height: 60px;
+	-webkit-animation: animation-cycle-warrior-attack 1.0s steps(8) ;
+	animation: animation-cycle-warrior-attack 1.0s steps(8) ;
+}
+
+.animation-warrior-purple-attack  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/warrior - purple - attack.png?v=2');
+	width: 47.75px;
+	height: 60px;
+	-webkit-animation: animation-cycle-warrior-attack 1.0s steps(8) ;
+	animation: animation-cycle-warrior-attack 1.0s steps(8) ;
+}
+
+@-webkit-keyframes animation-cycle-warrior-attack {
+	from { background-position: 0px; }
+	to { background-position: -382px; }
+}
+
+@Keyframes animation-cycle-warrior-attack {
+	from { background-position: 0px; }
+	to { background-position: -382px; }
+}      
+
+.animation-warrior-green-defend  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/warrior - green - defend.png?v=2');
+	width: 36.8px;
+	height: 60px;
+	-webkit-animation: animation-cycle-warrior-defend 1.0s steps(5) ;
+	animation: animation-cycle-warrior-defend 1.0s steps(5) ;
+}
+
+.animation-warrior-purple-defend  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/warrior - purple - defend.png?v=2');
+	width: 36.8px;
+	height: 60px;
+	-webkit-animation: animation-cycle-warrior-defend 1.0s steps(5) ;
+	animation: animation-cycle-warrior-defend 1.0s steps(5) ;
+}
+
+@-webkit-keyframes animation-cycle-warrior-defend {
+	from { background-position: 0px; }
+	to { background-position: -184px; }
+}
+
+@Keyframes animation-cycle-warrior-defend {
+	from { background-position: 0px; }
+	to { background-position: -184px; }
+}      
+
+/* archer */
+
+.animation-archer-green-idle  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/archer - green - idle.png?v=2');
+	width: 51.33px;
+	height: 60px;
+	-webkit-animation: animation-cycle-archer-idle 1.0s steps(6) infinite;
+	animation: animation-cycle-archer-idle 1.0s steps(6) infinite;
+}
+
+.animation-archer-purple-idle  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/archer - purple - idle.png?v=2');
+	width: 51.33px;
+	height: 60px;
+	-webkit-animation: animation-cycle-archer-idle 1.0s steps(6) infinite;
+	animation: animation-cycle-archer-idle 1.0s steps(6) infinite;
+}
+
+@-webkit-keyframes animation-cycle-archer-idle {
+	from { background-position: 0px; }
+	to { background-position: -308px; }
+}
+
+@Keyframes animation-cycle-archer-idle {
+	from { background-position: 0px; }
+	to { background-position: -308px; }
+}      
+
+.animation-archer-green-run  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/archer - green - run.png?v=2');
+	width: 57px;
+	height: 60px;
+	-webkit-animation: animation-cycle-archer-run 800ms steps(8) infinite ;
+	animation: animation-cycle-archer-run 800ms steps(8) infinite ;
+}
+
+.animation-archer-purple-run  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/archer - purple - run.png?v=2');
+	width: 57px;
+	height: 60px;
+	-webkit-animation: animation-cycle-archer-run 800ms steps(8) infinite ;
+	animation: animation-cycle-archer-run 800ms steps(8) infinite ;
+}
+
+@-webkit-keyframes animation-cycle-archer-run {
+	from { background-position: 0px; }
+	to { background-position: -456px; }
+}
+
+@Keyframes animation-cycle-archer-run {
+	from { background-position: 0px; }
+	to { background-position: -456px; }
+}      
+
+.animation-archer-green-attack  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/archer - green - attack.png?v=2');
+	width: 59.28px;
+	height: 60px;
+	-webkit-animation: animation-cycle-archer-attack 1.0s steps(14) ;
+	animation: animation-cycle-archer-attack 1.0s steps(14) ;
+}
+
+.animation-archer-purple-attack  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/archer - purple - attack.png?v=2');
+	width: 59.28px;
+	height: 60px;
+	-webkit-animation: animation-cycle-archer-attack 1.0s steps(14) ;
+	animation: animation-cycle-archer-attack 1.0s steps(14) ;
+}
+
+@-webkit-keyframes animation-cycle-archer-attack {
+	from { background-position: 0px; }
+	to { background-position: -830px; }
+}
+
+@Keyframes animation-cycle-archer-attack {
+	from { background-position: 0px; }
+	to { background-position: -830px; }
+}      
+
+.animation-archer-green-defend  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/archer - green - defend.png?v=2');
+	width: 57.2px;
+	height: 60px;
+	-webkit-animation: animation-cycle-archer-defend 1.0s steps(5) ;
+	animation: animation-cycle-archer-defend 1.0s steps(5) ;
+}
+
+.animation-archer-purple-defend  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/archer - purple - defend.png?v=2');
+	width: 57.2px;
+	height: 60px;
+	-webkit-animation: animation-cycle-archer-defend 1.0s steps(5) ;
+	animation: animation-cycle-archer-defend 1.0s steps(5) ;
+}
+
+@-webkit-keyframes animation-cycle-archer-defend {
+	from { background-position: 0px; }
+	to { background-position: -286px; }
+}
+
+@Keyframes animation-cycle-archer-defend {
+	from { background-position: 0px; }
+	to { background-position: -286px; }
+}      
+
+/* guardian */
+
+.animation-guardian-green-idle  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/guardian - green - idle.png?v=2');
+	width: 46px;
+	height: 60px;
+	-webkit-animation: animation-cycle-guardian-idle 1.0s steps(6) infinite;
+	animation: animation-cycle-guardian-idle 1.0s steps(6) infinite;
+}
+
+.animation-guardian-purple-idle  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/guardian - purple - idle.png?v=2');
+	width: 46px;
+	height: 60px;
+	-webkit-animation: animation-cycle-guardian-idle 1.0s steps(6) infinite;
+	animation: animation-cycle-guardian-idle 1.0s steps(6) infinite;
+}
+
+@-webkit-keyframes animation-cycle-guardian-idle {
+	from { background-position: 0px; }
+	to { background-position: -276px; }
+}
+
+@Keyframes animation-cycle-guardian-idle {
+	from { background-position: 0px; }
+	to { background-position: -276px; }
+}      
+
+.animation-guardian-green-run  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/guardian - green - run.png?v=2');
+	width: 50.875px;
+	height: 60px;
+	-webkit-animation: animation-cycle-guardian-run 1.0s steps(8) infinite ;
+	animation: animation-cycle-guardian-run 1.0s steps(8) infinite ;
+}
+
+.animation-guardian-purple-run  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/guardian - purple - run.png?v=2');
+	width: 50.875px;
+	height: 60px;
+	-webkit-animation: animation-cycle-guardian-run 1.0s steps(8) infinite ;
+	animation: animation-cycle-guardian-run 1.0s steps(8) infinite ;
+}
+
+@-webkit-keyframes animation-cycle-guardian-run {
+	from { background-position: 0px; }
+	to { background-position: -407px; }
+}
+
+@Keyframes animation-cycle-guardian-run {
+	from { background-position: 0px; }
+	to { background-position: -407px; }
+}      
+
+.animation-guardian-green-attack  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/guardian - green - attack.png?v=2');
+	width: 55.75px;
+	height: 60px;
+	-webkit-animation: animation-cycle-guardian-attack 1.0s steps(8) ;
+	animation: animation-cycle-guardian-attack 1.0s steps(8) ;
+}
+
+.animation-guardian-purple-attack  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/guardian - purple - attack.png?v=2');
+	width: 55.75px;
+	height: 60px;
+	-webkit-animation: animation-cycle-guardian-attack 1.0s steps(8) ;
+	animation: animation-cycle-guardian-attack 1.0s steps(8) ;
+}
+
+@-webkit-keyframes animation-cycle-guardian-attack {
+	from { background-position: 0px; }
+	to { background-position: -446px; }
+}
+
+@Keyframes animation-cycle-guardian-attack {
+	from { background-position: 0px; }
+	to { background-position: -446px; }
+}      
+
+.animation-guardian-green-defend  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/guardian - green - defend.png?v=2');
+	width: 51.8px;
+	height: 60px;
+	-webkit-animation: animation-cycle-guardian-defend 1.0s steps(5) ;
+	animation: animation-cycle-guardian-defend 1.0s steps(5) ;
+}
+
+.animation-guardian-purple-defend  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/guardian - purple - defend.png?v=2');
+	width: 51.8px;
+	height: 60px;
+	-webkit-animation: animation-cycle-guardian-defend 1.0s steps(5) ;
+	animation: animation-cycle-guardian-defend 1.0s steps(5) ;
+}
+
+@-webkit-keyframes animation-cycle-guardian-defend {
+	from { background-position: 0px; }
+	to { background-position: -259px; }
+}
+
+@Keyframes animation-cycle-guardian-defend {
+	from { background-position: 0px; }
+	to { background-position: -259px; }
+}      
+
+/* knight */
+
+.animation-knight-green-idle  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/knight - green - idle.png?v=2');
+	width: 40.4px;
+	height: 60px;
+	-webkit-animation: animation-cycle-knight-idle 1.0s steps(6) infinite;
+	animation: animation-cycle-knight-idle 1.0s steps(6) infinite;
+}
+
+.animation-knight-purple-idle  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/knight - purple - idle.png?v=2');
+	width: 40.4px;
+	height: 60px;
+	-webkit-animation: animation-cycle-knight-idle 1.0s steps(6) infinite;
+	animation: animation-cycle-knight-idle 1.0s steps(6) infinite;
+}
+
+@-webkit-keyframes animation-cycle-knight-idle {
+	from { background-position: 0px; }
+	to { background-position: -243px; }
+}
+
+@Keyframes animation-cycle-knight-idle {
+	from { background-position: 0px; }
+	to { background-position: -243px; }
+}      
+
+.animation-knight-green-run  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/knight - green - run.png?v=2');
+	width: 41.75px;
+	height: 60px;
+	-webkit-animation: animation-cycle-knight-run 1.0s steps(8) infinite ;
+	animation: animation-cycle-knight-run 1.0s steps(8) infinite ;
+}
+
+.animation-knight-purple-run  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/knight - purple - run.png?v=2');
+	width: 41.75px;
+	height: 60px;
+	-webkit-animation: animation-cycle-knight-run 1.0s steps(8) infinite ;
+	animation: animation-cycle-knight-run 1.0s steps(8) infinite ;
+}
+
+@-webkit-keyframes animation-cycle-knight-run {
+	from { background-position: 0px; }
+	to { background-position: -334px; }
+}
+
+@Keyframes animation-cycle-knight-run {
+	from { background-position: 0px; }
+	to { background-position: -334px; }
+}      
+
+.animation-knight-green-attack  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/knight - green - attack.png?v=2');
+	width: 39.66px;
+	height: 60px;
+	-webkit-animation: animation-cycle-knight-attack 1.0s steps(6) ;
+	animation: animation-cycle-knight-attack 1.0s steps(6) ;
+}
+
+.animation-knight-purple-attack  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/knight - purple - attack.png?v=2');
+	width: 39.66px;
+	height: 60px;
+	-webkit-animation: animation-cycle-knight-attack 1.0s steps(6) ;
+	animation: animation-cycle-knight-attack 1.0s steps(6) ;
+}
+
+@-webkit-keyframes animation-cycle-knight-attack {
+	from { background-position: 0px; }
+	to { background-position: -238px; }
+}
+
+@Keyframes animation-cycle-knight-attack {
+	from { background-position: 0px; }
+	to { background-position: -238px; }
+}      
+
+.animation-knight-green-defend  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/knight - green - defend.png?v=2');
+	width: 45.66px;
+	height: 60px;
+	-webkit-animation: animation-cycle-knight-defend 1.0s steps(6) ;
+	animation: animation-cycle-knight-defend 1.0s steps(6) ;
+}
+
+.animation-knight-purple-defend  {
+	margin-top: 3px;
+	margin-left: auto; 
+	margin-right: auto;
+	background-image: url('/classwar/resources/images/spriter/knight - purple - defend.png?v=2');
+	width: 45.66px;
+	height: 60px;
+	-webkit-animation: animation-cycle-knight-defend 1.0s steps(6) ;
+	animation: animation-cycle-knight-defend 1.0s steps(6) ;
+}
+
+@-webkit-keyframes animation-cycle-knight-defend {
+	from { background-position: 0px; }
+	to { background-position: -274px; }
+}
+
+@Keyframes animation-cycle-knight-defend {
+	from { background-position: 0px; }
+	to { background-position: -274px; }
+}      

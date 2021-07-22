@@ -1,0 +1,97 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+	<f:view contentType="text/html" encoding="UTF-8"> 
+		<h:head>
+			<title>Settings</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<meta http-equiv="pragma" content="no-cache" />
+			<meta http-equiv="expires" content="0" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+			<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+			<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+      					
+			<h:outputStylesheet library="css" name="standard.css" />
+		</h:head>
+		<h:body>		
+			<div style="width: 100%;">
+				<h:form id="formSettings">
+					<p:growl id="growl" life="2000" />
+		            <p:panel id="panel">
+						<p:dataTable id="tableUnits" var="unit" value="#{engineBean.settings.listUnits}" editable="true" editMode="cell" widgetVar="tableUnits">
+							<f:facet name="header">
+								Settings
+							</f:facet>
+						 
+							<p:column headerText="Nome">
+								<h:outputText value="#{unit.title}" />
+							</p:column>
+
+							<p:column headerText="Agilidade(Casas)">
+								<p:cellEditor>
+									<f:facet name="output"><h:outputText value="#{unit.agility}" /></f:facet>
+									<f:facet name="input"><p:inputNumber value="#{unit.agility}" minValue="1" maxValue="12" /></f:facet>
+								</p:cellEditor>
+							</p:column>
+						 
+							<p:column headerText="Força">
+								<p:cellEditor>
+									<f:facet name="output"><h:outputText value="#{unit.force}" /></f:facet>
+									<f:facet name="input"><p:inputNumber value="#{unit.force}" minValue="1" maxValue="100" /></f:facet>
+								</p:cellEditor>
+							</p:column>
+
+							<p:column headerText="Defesa">
+								<p:cellEditor>
+									<f:facet name="output"><h:outputText value="#{unit.defense}" /></f:facet>
+									<f:facet name="input"><p:inputNumber value="#{unit.defense}" minValue="1" maxValue="100" /></f:facet>
+								</p:cellEditor>
+							</p:column>
+							
+							<p:column headerText="Ataque(Casas)">
+								<p:cellEditor>
+									<f:facet name="output"><h:outputText value="#{unit.attack}" /></f:facet>
+									<f:facet name="input"><p:inputNumber value="#{unit.attack}" minValue="1" maxValue="12" /></f:facet>
+								</p:cellEditor>
+							</p:column>
+							
+							<p:column headerText="Custo $">
+								<p:cellEditor>
+									<f:facet name="output"><h:outputText value="#{unit.cost}" /></f:facet>
+									<f:facet name="input"><p:inputNumber value="#{unit.cost}" minValue="1" maxValue="1000" /></f:facet>
+								</p:cellEditor>
+							</p:column>
+
+							<p:column headerText="Bônus (Dead/Attack) %">
+								<p:cellEditor>
+									<f:facet name="output"><h:outputText value="#{unit.bonus}" /></f:facet>
+									<f:facet name="input"><p:inputNumber value="#{unit.bonus}" minValue="1" maxValue="100" /></f:facet>
+								</p:cellEditor>
+							</p:column>
+							
+							<p:column headerText="Custo (Champion) $">
+								<p:cellEditor>
+									<f:facet name="output"><h:outputText value="#{unit.costChampion}" /></f:facet>
+									<f:facet name="input"><p:inputNumber value="#{unit.costChampion}" minValue="1" maxValue="1000" /></f:facet>
+								</p:cellEditor>
+							</p:column>
+							
+							<p:column headerText="Poder (Champion) % Força e Ataque">
+								<p:cellEditor>
+									<f:facet name="output"><h:outputText value="#{unit.powerChampion}" /></f:facet>
+									<f:facet name="input"><p:inputNumber value="#{unit.powerChampion}" minValue="1" maxValue="100" /></f:facet>
+								</p:cellEditor>
+							</p:column>
+							
+						</p:dataTable>			            
+		            </p:panel>
+		            <div style="margin-top: 10px; width: 100%; text-align: right;">
+		            	<p:commandButton value="Salva" actionListener="#{settignsBean.save}" update="formSettings:growl"/>
+		            </div>		            
+				</h:form>
+			</div>					
+		</h:body>
+	</f:view>	
+</html>

@@ -1,0 +1,174 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+	<f:view contentType="text/html" encoding="UTF-8"> 
+		<h:head>
+			<title>ClassWar</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<meta http-equiv="pragma" content="no-cache" />
+			<meta http-equiv="expires" content="0" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+			<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+			<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+      					
+			<h:outputStylesheet library="css" name="standard.css" />
+			<h:outputStylesheet library="css" name="animation.css" />
+			<h:outputStylesheet library="css" name="animate.css" />
+			<h:outputScript library="scripts" name="buzz.min.js" />
+			<h:outputScript library="scripts" name="jquery.transit.min.js" />
+			<h:outputScript library="scripts" name="velocity.min.js" />
+			<h:outputScript library="scripts" name="classwar.js" />
+
+			<h:outputStylesheet library="codemirror" name="lib/codemirror.css" />
+			<h:outputStylesheet library="codemirror" name="addon/fold/foldgutter.css" />
+			<h:outputStylesheet library="codemirror" name="addon/dialog/dialog.css" />
+			<h:outputStylesheet library="codemirror" name="addon/display/fullscreen.css" />
+			<h:outputStylesheet library="codemirror" name="addon/hint/show-hint.css" />
+			<h:outputStylesheet library="css" name="monokai.css" />
+			
+			<h:outputScript library="codemirror" name="lib/codemirror.js" />
+ 			<h:outputScript library="codemirror" name="mode/xml/xml.js" /> 
+ 			<h:outputScript library="codemirror" name="mode/htmlmixed/htmlmixed.js" /> 
+ 			<h:outputScript library="codemirror" name="mode/css/css.js" /> 
+ 			<h:outputScript library="codemirror" name="mode/javascript/javascript.js" /> 
+ 			<h:outputScript library="codemirror" name="addon/fold/xml-fold.js" />
+ 			<h:outputScript library="codemirror" name="addon/edit/closetag.js" />
+ 			<h:outputScript library="codemirror" name="addon/search/searchcursor.js" />
+ 			<h:outputScript library="codemirror" name="addon/search/search.js" />
+ 			<h:outputScript library="codemirror" name="addon/dialog/dialog.js" />
+ 			<h:outputScript library="codemirror" name="addon/edit/matchbrackets.js" />
+ 			<h:outputScript library="codemirror" name="addon/edit/closebrackets.js" />
+ 			<h:outputScript library="codemirror" name="addon/comment/comment.js" />
+ 			<h:outputScript library="codemirror" name="addon/wrap/hardwrap.js" />
+ 			<h:outputScript library="codemirror" name="addon/fold/foldcode.js" />
+ 			<h:outputScript library="codemirror" name="addon/fold/brace-fold.js" />
+ 			<h:outputScript library="codemirror" name="addon/display/fullscreen.js" />
+ 			<h:outputScript library="codemirror" name="addon/hint/show-hint.js" />
+ 			<h:outputScript library="codemirror" name="addon/hint/xml-hint.js" />
+ 			<h:outputScript library="codemirror" name="keymap/sublime.js" />
+ 			<h:outputScript library="scripts" name="classwar-hint.js" />			
+ 			<h:outputScript library="codemirror" name="mode/clike/clike.js" /> 
+		</h:head>
+		<h:body onload="init()" styleClass="bodyGame">
+		
+			<p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+			    <p:graphicImage library="images" name="ajaxloadingbar.gif" />
+			</p:dialog>
+								
+			<h:form id="formGame">
+				<p:outputPanel id="panelGame">
+	                <div id="divMap">
+	                    <p:outputPanel id="panelBoard">
+							<div class="battleField">
+					 			<div id="divCastleGameUnits">
+					 				<c:if test="#{gameBean.team == 1}">
+										<div id="divCastleGameUnit1" style="background-image: url('/classwar/resources/images/background/classwar - background - castle - green.png');">
+										</div>
+										<div id="divCastleGameUnit2" style="background-image: url('/classwar/resources/images/background/classwar - background - castle - purple.png');">
+										</div>
+									</c:if>	
+					 				<c:if test="#{gameBean.team == 2}">
+										<div id="divCastleGameUnit1" class="itemFlipH" style="background-image: url('/classwar/resources/images/background/classwar - background - castle - purple.png');">
+										</div>
+										<div id="divCastleGameUnit2" class="itemFlipH" style="background-image: url('/classwar/resources/images/background/classwar - background - castle - green.png');">
+										</div>
+									</c:if>	
+								</div>
+					            <div style="clear: both;">
+					            </div>                        	                										
+								<ui:insert name="boardGame">
+									<ui:include src="boardgame.xhtml" />
+								</ui:insert>								
+							</div>
+	                    </p:outputPanel>
+	                </div>
+	                <div id="divEditor" class="panelEditor divFooter">
+						<p:outputPanel id="panelToolbarTeam1">
+							<div id="divToolbar1" class="panelBasic">
+								<div class="divToolbarItems">
+									<div class="divGoldTeam1">
+										<ui:insert name="toolbar">
+											<ui:include src="toolbar1a.xhtml" />
+										</ui:insert>
+									</div>
+									<div class="divGoldTeam2">
+										<ui:insert name="toolbar">
+											<ui:include src="toolbar1b.xhtml" />
+										</ui:insert>
+									</div>
+									<div style="clear: both;"></div>
+								</div>
+							</div>
+						</p:outputPanel>	
+                		<p:outputPanel rendered="#{gameBean.currentPlayer != null}">
+							<p:outputPanel id="panelToolbarTeam2">
+								<div class="panelBasic">
+									<div class="divToolbarItems">
+										<div class="divGoldTeam1">
+											<ui:insert name="toolbar">
+												<ui:include src="toolbar2a.xhtml" />
+											</ui:insert>
+										</div>
+										<div class="divGoldTeam2">
+											<ui:insert name="toolbar">
+												<ui:include src="toolbar2b.xhtml" />
+											</ui:insert>
+										</div>
+										<div style="clear: both;"></div>
+									</div>
+								</div>
+							</p:outputPanel>
+	 	                	<p:inputTextarea id="textEditor0" widgetVar="textEditor0" style="display: none;" value="#{gameBean.code}"/>
+			        		<article id="editorPlayer0" class="panelBasic">
+			        		</article>
+		        		</p:outputPanel>
+	                </div>             
+	            </p:outputPanel>			                              
+				<p:poll id="pollGame" interval="2" listener="#{gameBean.pollGame(false)}" update="formGame:startTime"/>
+			</h:form>			
+			
+			<div style="display: none;">
+				<img src="/classwar/resources/images/spriter/archer - green - attack.png?v=2" />
+				<img src="/classwar/resources/images/spriter/archer - green - defend.png?v=2" />
+				<img src="/classwar/resources/images/spriter/archer - green - idle.png?v=2" />
+				<img src="/classwar/resources/images/spriter/archer - green - run.png?v=2" />
+				<img src="/classwar/resources/images/spriter/archer - purple - attack.png?v=2" />
+				<img src="/classwar/resources/images/spriter/archer - purple - defend.png?v=2" />
+				<img src="/classwar/resources/images/spriter/archer - purple - idle.png?v=2" />
+				<img src="/classwar/resources/images/spriter/archer - purple - run.png?v=2" />
+				<img src="/classwar/resources/images/spriter/green - dead.png?v=2" />
+				<img src="/classwar/resources/images/spriter/guardian - green - attack.png?v=2" />
+				<img src="/classwar/resources/images/spriter/guardian - green - defend.png?v=2" />
+				<img src="/classwar/resources/images/spriter/guardian - green - idle.png?v=2" />
+				<img src="/classwar/resources/images/spriter/guardian - green - run.png?v=2" />
+				<img src="/classwar/resources/images/spriter/guardian - purple - attack.png?v=2" />
+				<img src="/classwar/resources/images/spriter/guardian - purple - dead.png?v=2" />
+				<img src="/classwar/resources/images/spriter/guardian - purple - defend.png?v=2" />
+				<img src="/classwar/resources/images/spriter/guardian - purple - idle.png?v=2" />
+				<img src="/classwar/resources/images/spriter/guardian - purple - run.png?v=2" />
+				<img src="/classwar/resources/images/spriter/knight - green - attack.png?v=2" />
+				<img src="/classwar/resources/images/spriter/knight - green - dead.png?v=2" />
+				<img src="/classwar/resources/images/spriter/knight - green - defend.png?v=2" />
+				<img src="/classwar/resources/images/spriter/knight - green - idle.png?v=2" />
+				<img src="/classwar/resources/images/spriter/knight - green - run.png?v=2" />
+				<img src="/classwar/resources/images/spriter/knight - purple - attack.png?v=2" />
+				<img src="/classwar/resources/images/spriter/knight - purple - defend.png?v=2" />
+				<img src="/classwar/resources/images/spriter/knight - purple - idle.png?v=2" />
+				<img src="/classwar/resources/images/spriter/knight - purple - run.png?v=2" />
+				<img src="/classwar/resources/images/spriter/purple - dead.png?v=2" />
+				<img src="/classwar/resources/images/spriter/warrior - green - attack.png?v=2" />
+				<img src="/classwar/resources/images/spriter/warrior - green - defend.png?v=2" />
+				<img src="/classwar/resources/images/spriter/warrior - green - idle.png?v=2" />
+				<img src="/classwar/resources/images/spriter/warrior - green - run.png?v=2" />
+				<img src="/classwar/resources/images/spriter/warrior - purple - attack.png?v=2" />
+				<img src="/classwar/resources/images/spriter/warrior - purple - defend.png?v=2" />
+				<img src="/classwar/resources/images/spriter/warrior - purple - idle.png?v=2" />
+				<img src="/classwar/resources/images/spriter/warrior - purple - run.png?v=2" />
+			</div>    		
+		
+		</h:body>
+	</f:view>	
+</html>

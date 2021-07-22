@@ -1,0 +1,315 @@
+.bodyIndex {
+	background-image: url('/classwar/resources/images/background/classwar - background.png?v=2');
+	background-repeat: repeat-x;
+	background-color: #6b5745;
+	margin: 0;
+	min-width: 1280px;
+}
+
+.bodyGame {
+	min-width: 1280px;
+	background-image: url('/classwar/resources/images/background/classwar - background - soil.png?v=2');
+	background-repeat: repeat;
+	/*background-color: #867127;*/	
+	margin: 0;
+		
+}
+
+#divMap {
+	text-align: center; 
+	width: 100%; 
+	margin-bottom: 0px;
+}
+
+#divCastleUnits {	
+	top: 275px;
+	position: absolute;
+	width: 100%;
+	min-width: 1280px;
+}
+
+#divCastleUnit1 {
+	margin-top: 20px; 
+	width: 493px; 
+	height: 308px; 
+	float: left; 
+	background-image: url('/classwar/resources/images/background/classwar - background - castle - unit 1.png?v=2');
+}
+
+#divCastleUnit2 {
+	width: 496px; 
+	height: 325px; 
+	float: right; 
+	background-image: url('/classwar/resources/images/background/classwar - background - castle - unit 2.png?v=2');
+}
+
+#divCastleGameUnits {
+	position: absolute;
+	width: 100%;
+	min-width: 1280px;
+}
+
+#divCastleGameUnit1 {
+	width: 151px; 
+	height: 450px; 
+	float: left; 
+	/*background-image: url('/classwar/resources/images/background/classwar - background - castle - green.png?v=2');*/
+}
+
+#divCastleGameUnit2 {
+	width: 151px; 
+	height: 450px; 
+	float: right; 
+	/*background-image: url('/classwar/resources/images/background/classwar - background - castle - purple.png?v=2');*/
+}
+
+#divCastles{
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+}
+
+#divCastle1 {
+	margin-top: 50px; 
+	width: 435px; 
+	height: 271px; 
+	float: left; 
+	background-image: url('/classwar/resources/images/background/classwar - background - castle 1.png?v=2');
+}
+
+#divCastle2 {
+	margin-top: 30px; 
+	width: 445px; 
+	height: 291px; 
+	float: right; 
+	background-image: url('/classwar/resources/images/background/classwar - background - castle 2.png?v=2');
+}		
+
+.breakpoints {width: 16px;}
+.breakpoint { color: #822; }
+.CodeMirror {
+	border: 0px;
+	width: 100%;
+}
+
+#divTableGame {
+	width: 100%;
+}
+
+.tableGame {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.tableGame td, .tableGame th {
+    border: 1px solid #BCC7CF; 
+    padding: 8px;
+    width: 70px;
+    height: 150px;
+    text-align: center;
+}
+
+.divTitleUnits {
+    margin: 0 auto;
+    margin: 0px 10px 10px 10px;
+}
+
+#divFailed {
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.spanFailed {
+	color: white;
+	text-shadow: 2px 2px black;
+	font-size: 1.0em;
+}
+
+#divFailedText {
+    margin: 0 auto;
+    margin-bottom: 0px;
+}
+
+.divToolbarItems {
+    margin: 0 auto;
+    margin-bottom: 0px;
+}        
+
+.divTitleUnits1 {
+	text-shadow: 2px 2px black;
+	font-size: 0.9em;
+	color: white;
+	font-weight: bold;
+    float: left;
+}
+
+.startTime {
+	position: absolute;
+	margin-top: 11px;
+	margin-left: -60px;
+    color: #FFD01B;
+	text-shadow: 2px 2px black;
+    font-size: 0.9em !important;
+    font-weight: bold;
+}
+
+.goldTeam {
+	position: absolute;
+	margin-top: 14px;
+	margin-left: -40px;
+    color: #FFD01B;
+	text-shadow: 2px 2px black;
+    font-size: 0.9em !important;
+    font-weight: bold;
+}
+
+.divGoldTeam1 {
+    color: white;
+	text-shadow: 2px 2px black;
+    float: left;
+    font-size: 0.8em;
+}
+
+.divGoldTeam2 {
+    color: white;
+	text-shadow: 2px 2px black;
+    float: right;
+    font-size: 0.8em;
+}
+
+.divCodeUnits1 {
+    float: left;
+    width: 50%;
+}
+
+.divSubCodeUnits1 {
+	margin-right: 1px;
+	border: 1px solid #357F20;
+	color: #357F20;
+}
+
+.divCodeUnits2 {
+    float: right;
+    width: 50%;
+}
+
+.divSubCodeUnits2 {
+	margin-left: 1px;
+	border: 1px solid #872021;
+	color: #872021;
+}
+
+.divUnits1 {
+    text-align: center;
+    color: white;
+    background-color: #357F20;
+}
+
+.divTitleUnits2 {
+	text-shadow: 2px 2px black;
+	font-size: 0.9em;
+	color: white;
+	font-weight: bold;
+    float: right;
+}
+
+.divUnits2 {
+    text-align: center;
+    color: white;
+    background-color: #872021;
+}
+
+.divUnitEmpty {
+    text-align: center;
+    color: white;
+    background-color: white;
+}
+
+.error-column {
+	text-align: left;
+    width: 60px !important;
+}
+
+.error-msg {
+	text-align: left;
+}
+
+.divOptions {
+	text-align: center; 
+	width: 100%;
+	z-index: 5;
+	position: absolute;
+}
+
+.panelOptions {
+	width: 650px; 
+	margin-left: auto; 
+	margin-right: auto; 
+	margin-top: 10px;
+	font-size: 1.0em;
+}
+
+.panelOptionsText, .ui-selectoneradio label {
+	color: white;
+	text-shadow: 2px 2px black;
+}
+
+.panelEditor {
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: 49px 57px 50px 58px;
+	-moz-border-image: url(/classwar/resources/images/border-editor.png?v=2) 49 57 50 58 round;
+	-webkit-border-image: url(/classwar/resources/images/border-editor.png?v=2) 49 57 50 58 round;
+	-o-border-image: url(/classwar/resources/images/border-editor.png?v=2) 49 57 50 58 round;
+	border-image: url(/classwar/resources/images/border-editor.png?v=2) 49 57 50 58 fill round;	
+}
+
+.panelStatus {
+	margin-top: 1px;
+    color: #FFD01B;
+	text-shadow: 2px 2px black;
+    font-size: 0.9em !important;
+    font-weight: bold;
+	border-style: solid;
+	border-width: 10px 30px 12px;
+	-moz-border-image: url(/classwar/resources/images/buttons/button-status.png?v=2) 10 30 10 round;
+	-webkit-border-image: url(/classwar/resources/images/buttons/button-status.png?v=2) 10 30 10 round;
+	-o-border-image: url(/classwar/resources/images/buttons/button-status.png?v=2) 10 30 10 round;
+	border-image: url(/classwar/resources/images/buttons/button-status.png?v=2) 10 30 10 fill round;	
+}
+
+.panelStatusText {
+}
+
+.panelButtonsConfig {
+	height: 50px;
+}
+
+#divToolbar {
+}
+
+.panelBasic {
+	border-style: solid;
+	border-width: 10px 27px;
+	-moz-border-image: url(/classwar/resources/images/border-basic.png?v=2) 10 27 round;
+	-webkit-border-image: url(/classwar/resources/images/border-basic.png?v=2) 10 27 round;
+	-o-border-image: url(/classwar/resources/images/border-basic.png?v=2) 10 27 round;
+	border-image: url(/classwar/resources/images/border-basic.png?v=2) 10 27 fill round;	
+}
+
+.divFooter {
+	/*position: absolute;
+    bottom: 0;
+    width: 100%;*/
+}
+
+.itemFlipH {
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}

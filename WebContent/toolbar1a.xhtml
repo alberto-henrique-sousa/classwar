@@ -1,0 +1,143 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+		<ui:composition>
+                <div id="divToolbar1a" class="toolbar">
+                	<section class="rowToolbar">
+                		<article class="colToolbar1">
+							<h:graphicImage library="images" name="buttons/button-money.png"/>
+							<p:outputLabel styleClass="goldTeam">#{gameBean.currentTeam().gold()}</p:outputLabel>
+						</article>              
+                		<article class="colToolbar1">
+	                        <div class="panelStatus">
+	                            <span class="panelStatusText">#{gameBean.currentTeam().name}</span>
+	                        </div>
+						</article>                	
+					</section>	
+					<section class="rowToolbar">	  	
+                		<article class="colToolbar1">
+							<h:graphicImage library="images" name="buttons/button-warrior.png"/>
+							<p:outputLabel styleClass="goldTeam">#{gameBean.currentTeam().totalUnits.warrior}</p:outputLabel>
+							<div class="tooltiptext">
+								<div class="titleTootip">
+									#{engineBean.settings.warrior.title}
+								</div>
+								<div>
+									agilidade: #{engineBean.settings.warrior.agility} casa(s) 
+								</div>
+								<div>
+									força: #{engineBean.settings.warrior.force}
+								</div>
+								<div>
+									ataque: #{engineBean.settings.warrior.attack} casa(s)
+								</div>
+								<div>
+									defesa: #{engineBean.settings.warrior.defense}
+								</div>		                            	
+								<div>
+									custo: $ #{engineBean.settings.warrior.cost}
+								</div>		                            	
+								<div>
+									champion: $ #{engineBean.settings.warrior.costChampion} (+#{engineBean.settings.warrior.powerChampion}% força/defesa)
+								</div>		                            	
+								<div>
+									bônus: -#{engineBean.settings.warrior.bonus}% defesa (ataque na retaguarda)
+								</div>		                            	
+							</div>                   				
+                		</article>
+                		<article class="colToolbar1">
+							<h:graphicImage library="images" name="buttons/button-archer.png"/>
+							<p:outputLabel styleClass="goldTeam">#{gameBean.currentTeam().totalUnits.archer}</p:outputLabel>
+							<div class="tooltiptext">
+								<div class="titleTootip">
+									#{engineBean.settings.archer.title}
+								</div>
+								<div>
+									agilidade: #{engineBean.settings.archer.agility} casa(s) 
+								</div>
+								<div>
+									força: #{engineBean.settings.archer.force}
+								</div>
+								<div>
+									ataque: #{engineBean.settings.archer.attack} casa(s)
+								</div>
+								<div>
+									defesa: #{engineBean.settings.archer.defense}
+								</div>		                            	
+								<div>
+									custo: $ #{engineBean.settings.archer.cost}
+								</div>		                            	
+								<div>
+									champion: $ #{engineBean.settings.archer.costChampion} (+#{engineBean.settings.archer.powerChampion}% força/defesa)
+								</div>		                            	
+								<div>
+									bônus: -#{engineBean.settings.archer.bonus}% defesa (ataque na retaguarda)
+								</div>		                            	
+							</div>                   				
+                		</article>
+                		<article class="colToolbar1">
+							<h:graphicImage library="images" name="buttons/button-knight.png"/>
+							<p:outputLabel styleClass="goldTeam">#{gameBean.currentTeam().totalUnits.knight}</p:outputLabel>
+							<div class="tooltiptext">
+								<div class="titleTootip">
+									#{engineBean.settings.knight.title}
+								</div>
+								<div>
+									agilidade: #{engineBean.settings.knight.agility} casa(s) 
+								</div>
+								<div>
+									força: #{engineBean.settings.knight.force}
+								</div>
+								<div>
+									ataque: #{engineBean.settings.knight.attack} casa(s)
+								</div>
+								<div>
+									defesa: #{engineBean.settings.knight.defense}
+								</div>		                            	
+								<div>
+									custo: $ #{engineBean.settings.knight.cost}
+								</div>		                            	
+								<div>
+									champion: $ #{engineBean.settings.knight.costChampion} (+#{engineBean.settings.knight.powerChampion}% força/defesa)
+								</div>		                            	
+								<div>
+									bônus: -#{engineBean.settings.knight.bonus}% defesa (ataque na retaguarda)
+								</div>		                            	
+							</div>                   				
+                		</article>
+                		<article class="colToolbar1">
+							<h:graphicImage library="images" name="buttons/button-guardian.png"/>
+							<p:outputLabel styleClass="goldTeam">#{gameBean.currentTeam().totalUnits.guardian}</p:outputLabel>
+							<div class="tooltiptext">
+								<div class="titleTootip">
+									#{engineBean.settings.guardian.title}
+								</div>
+								<div>
+									agilidade: #{engineBean.settings.guardian.agility} casa(s) 
+								</div>
+								<div>
+									força: #{engineBean.settings.guardian.force}
+								</div>
+								<div>
+									ataque: #{engineBean.settings.guardian.attack} casa(s)
+								</div>
+								<div>
+									defesa: #{engineBean.settings.guardian.defense}
+								</div>		                            	
+								<div>
+									custo: $ #{engineBean.settings.guardian.cost}
+								</div>		                            	
+								<div>
+									champion: $ #{engineBean.settings.guardian.costChampion} (+#{engineBean.settings.guardian.powerChampion}% força/defesa)
+								</div>		                            	
+								<div>
+									bônus: -#{engineBean.settings.guardian.bonus}% defesa (ataque na retaguarda)
+								</div>		                            	
+							</div>                   				
+                		</article>
+                	</section>
+                </div>		
+		</ui:composition>      
+</html>

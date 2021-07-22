@@ -1,0 +1,110 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+	<f:view contentType="text/html" encoding="UTF-8"> 
+		<h:head>
+			<title>ClassWar</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<meta http-equiv="pragma" content="no-cache" />
+			<meta http-equiv="expires" content="0" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+			<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+			<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+      					
+			<h:outputStylesheet library="css" name="standard.css" />
+			<h:outputScript library="scripts" name="buzz.min.js" />
+			<h:outputScript library="scripts" name="classwar.js" />
+		</h:head>
+		<h:body onload="playSoundBackground()" styleClass="bodyIndex">
+		
+ 			<div id="divCastleUnits">
+				<div id="divCastleUnit1">
+				</div>
+				<div id="divCastleUnit2">
+				</div>
+			</div>
+            <div style="clear: both;">
+            </div>                        	                
+				
+			<div class="divOptions">
+				<h:form id="formGame">
+				    <div class="panelOptions panelEditor">
+			            <p:outputPanel id="panel">
+		                	<p:focus for="playerName"/>
+			                <h:panelGrid columns="3" cellspacing="10">
+			                	<p:outputLabel value="Equipe:" styleClass="panelOptionsText"/>
+								<p:selectOneRadio id="team" value="#{gameBean.team}" columns="1" required="true" layout="pageDirection">
+						            <f:selectItem itemLabel="#{engineBean.team1.name}" itemValue="1" />
+						            <f:selectItem itemLabel="#{engineBean.team2.name}" itemValue="2" />
+						        </p:selectOneRadio>
+			                	<p:message for="team" display="tooltip"/>
+			                
+			                	<p:outputLabel value="Nome:" styleClass="panelOptionsText"/>
+			                    <p:inputText id="playerName" value="#{gameBean.playerName}" widgetVar="playerName" required="true" label="Informe o seu Nome" style="width: 400px"/>
+			                	<p:message for="playerName" display="tooltip"/>
+			                	
+			                	<p:outputLabel value=""/>
+			                	<p:outputPanel id="toolbarButtons">
+									<p:commandLink actionListener="#{gameBean.iReady}" update="formGame:panel" disabled="#{!engineBean.open || gameBean.ready}">
+									    <h:graphicImage library="images" name="buttons/button-ok.png" height="45" width="45"/>
+									</p:commandLink>				        						                				                				                				                	
+									<p:commandLink actionListener="#{gameBean.start}" update="formGame:panel" disabled="#{!engineBean.starded || !gameBean.openSession()}" style="margin-left: 5px;">
+									    <h:graphicImage library="images" name="buttons/button-play.png" height="45" width="45"/>
+									</p:commandLink>				        						                				                				                				                				                	
+				                </p:outputPanel>			                	
+			                	<p:outputLabel value=""/>
+			                	
+			                	<p:outputLabel value=""/>
+			                	<p:outputLabel id="textWait" value="#{gameBean.waitPlayers()}" styleClass="panelOptionsText"/>
+			                	<p:outputLabel value=""/>
+			                	
+			                	<p:outputLabel value="Sala:" styleClass="panelOptionsText"/>
+			                	<p:outputLabel id="statusRoom" value="#{engineBean.statusRoom()}" styleClass="panelOptionsText"/>
+			                	<p:outputLabel value=""/>
+			                	
+			                	<p:outputLabel value="Jogadores:" styleClass="panelOptionsText"/>
+								<p:selectOneButton id="totalPlayers" value="#{engineBean.settings.totalPlayers}" disabled="true">
+						            <f:selectItem itemLabel="1x1" itemValue="1" />
+						            <f:selectItem itemLabel="2x2" itemValue="2" />
+						            <f:selectItem itemLabel="3x3" itemValue="3" />
+						            <f:selectItem itemLabel="4x4" itemValue="4" />
+						        </p:selectOneButton>			                	
+						        <p:outputLabel value=""/>
+						        
+			                	<p:outputLabel value="Recursos:" styleClass="panelOptionsText"/>
+								<h:outputText id="totalGoldText" value="#{engineBean.settings.gold} (Gold) por jogador" styleClass="panelOptionsText"/>
+						        <p:outputLabel value=""/>			                	
+
+			                	<p:outputLabel value="Ações:" styleClass="panelOptionsText"/>
+								<h:outputText id="actionsRoundText" value="#{engineBean.settings.actionsRound} por turno e jogador" styleClass="panelOptionsText"/>
+						        <p:outputLabel value=""/>			                	
+						        
+								<p:outputLabel value=""/>
+								<p:dataTable id="listTeam1" var="listTeam1" value="#{engineBean.team1.players}" emptyMessage="">
+									<p:column headerText="#{engineBean.team1.name}">
+								        <h:outputText value="#{listTeam1.name}" />
+								    </p:column>									
+								</p:dataTable>
+								<p:outputLabel value=""/>
+								
+								<p:outputLabel value=""/>
+								<p:dataTable id="listTeam2" var="listTeam2" value="#{engineBean.team2.players}" emptyMessage="">
+									<p:column headerText="#{engineBean.team2.name}">
+								        <h:outputText value="#{listTeam2.name}" />
+								    </p:column>									
+								</p:dataTable>
+								<p:outputLabel value=""/>						        			                															        			                	
+
+			                </h:panelGrid>
+			            </p:outputPanel>
+		            </div>
+				 
+					<p:poll interval="5" listener="#{gameBean.pollIndex()}" update="formGame:statusRoom formGame:team formGame:totalPlayers formGame:toolbarButtons formGame:textWait formGame:listTeam1 formGame:listTeam2 formGame:totalGoldText formGame:actionsRoundText" />
+				</h:form>
+			</div>			
+		
+		</h:body>
+	</f:view>	
+</html>

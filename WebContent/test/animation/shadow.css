@@ -1,0 +1,8 @@
+#divImage {
+	background-image: url('imagens/border.png');
+	width: 81px;
+	height: 81px;
+    -webkit-box-shadow: -6px 0 white, 6px 0 white, 0 7px 4px -3px black; 
+       -moz-box-shadow: -6px 0 white, 6px 0 white, 0 7px 4px -3px black;
+            box-shadow: -6px 0 white, 6px 0 white, 0 7px 4px -3px black;	        
+}

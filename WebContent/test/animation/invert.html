@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+	<head>  
+		<meta charset="utf-8">
+		<title>Test Animation</title>
+		<meta name="author" content="Alberto Henrique Sousa" />
+		<link href="invert.css" rel="stylesheet"/>
+		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="jquery.transit.min.js"></script>
+		<script type="text/javascript" src="invert.js"></script>
+	</head>
+	<body>
+		<div>
+			<a href="#" onclick="invertY()">Invert</a>
+		</div>
+		<div class="battleField">
+			<section class="row">
+				<article class="col">
+					<div class="div-title-unit" style="text-align: right; padding-right: 65px;">Index 0</div>
+					<div id="animation-archer-green-idle" class="animation-archer-idle"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: right; padding-right: 65px;">Index 1</div>
+					<div id="animation-archer-green-run" class="animation-archer-run"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: right; padding-right: 80px;">Index 2</div>
+					<div id="animation-archer-green-attack" class="animation-archer-attack"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: right; padding-right: 80px;">Index 3</div>
+					<div id="animation-archer-green-defend" class="animation-archer-defend"></div>
+				</article>
+				
+				<article class="col">
+					<div class="div-title-unit" style="text-align: center;">Index 4</div>
+					<div></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: center;">Index 5</div>
+					<div></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: center;">Index 6</div>
+					<div></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: center;">Index 7</div>
+					<div></div>
+				</article>
+	
+				<article class="col">
+					<div class="div-title-unit" style="text-align: left; padding-left: 65px;">Index 8</div>
+					<div id="animation-archer-purple-idle" class="animation-archer-idle"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: left; padding-left: 65px;">Index 9</div>
+					<div id="animation-archer-purple-run" class="animation-archer-run"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: left; padding-left: 80px;">Index 10</div>
+					<div id="animation-archer-purple-attack" class="animation-archer-attack"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: left; padding-left: 80px;">Index 11</div>
+					<div id="animation-archer-purple-defend" class="animation-archer-defend"></div>
+				</article>			
+			</section>
+		</div>
+
+		<div class="battleField" style="margin-top: 15px;">
+			<section class="row">
+				<article class="col">
+					<div class="div-title-unit" style="text-align: right; padding-right: 30px;">Index 0</div>
+					<div id="animation-guardian-green-idle" class="animation-guardian-idle"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: right; padding-right: 45px;">Index 1</div>
+					<div id="animation-guardian-green-run" class="animation-guardian-run"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: right; padding-right: 60px;">Index 2</div>
+					<div id="animation-guardian-green-attack" class="animation-guardian-attack"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: right; padding-right: 65px;">Index 3</div>
+					<div id="animation-guardian-green-defend" class="animation-guardian-defend"></div>
+				</article>
+				
+				<article class="col">
+					<div class="div-title-unit" style="text-align: center;">Index 4</div>
+					<div></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: center;">Index 5</div>
+					<div></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: center;">Index 6</div>
+					<div></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: center;">Index 7</div>
+					<div></div>
+				</article>
+	
+				<article class="col">
+					<div class="div-title-unit" style="text-align: left; padding-left: 30px;">Index 8</div>
+					<div id="animation-guardian-purple-idle" class="animation-guardian-idle"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: left; padding-left: 45px;">Index 9</div>
+					<div id="animation-guardian-purple-run" class="animation-guardian-run"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: left; padding-left: 60px;">Index 10</div>
+					<div id="animation-guardian-purple-attack" class="animation-guardian-attack"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: left; padding-left: 65px;">Index 11</div>
+					<div id="animation-guardian-purple-defend" class="animation-guardian-defend"></div>
+				</article>			
+			</section>
+		</div>
+		
+		<div class="battleField" style="margin-top: 15px;">
+			<section class="row">
+				<article class="col">
+					<div class="div-title-unit" style="text-align: right; padding-right: 20px;">Index 0</div>
+					<div id="animation-warrior-green-idle" class="animation-warrior-idle"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: right; padding-right: 40px;">Index 1</div>
+					<div id="animation-warrior-green-run" class="animation-warrior-run"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: right; padding-right: 60px;">Index 2</div>
+					<div id="animation-warrior-green-attack" class="animation-warrior-attack"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: right; padding-right: 30px;">Index 3</div>
+					<div id="animation-warrior-green-defend" class="animation-warrior-defend"></div>
+				</article>
+				
+				<article class="col">
+					<div class="div-title-unit" style="text-align: center;">Index 4</div>
+					<div></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: center;">Index 5</div>
+					<div></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: center;">Index 6</div>
+					<div></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: center;">Index 7</div>
+					<div></div>
+				</article>
+	
+				<article class="col">
+					<div class="div-title-unit" style="text-align: left; padding-left: 20px;">Index 8</div>
+					<div id="animation-warrior-purple-idle" class="animation-warrior-idle"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: left; padding-left: 40px;">Index 9</div>
+					<div id="animation-warrior-purple-run" class="animation-warrior-run"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: left; padding-left: 60px;">Index 10</div>
+					<div id="animation-warrior-purple-attack" class="animation-warrior-attack"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit" style="text-align: left; padding-left: 30px;">Index 11</div>
+					<div id="animation-warrior-purple-defend" class="animation-warrior-defend"></div>
+				</article>			
+			</section>
+		</div>			
+						
+		<div class="battleField" style="margin-top: 15px;">
+			<section class="row">
+				<article class="col">
+					<div class="div-title-unit-max" style="text-align: right; padding-right: 50px;">Index 0</div>
+					<div id="animation-knight-green-idle" class="animation-knight-idle"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit-max" style="text-align: right; padding-right: 70px;">Index 1</div>
+					<div id="animation-knight-green-run" class="animation-knight-run"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit-max" style="text-align: right; padding-right: 55px;">Index 2</div>
+					<div id="animation-knight-green-attack" class="animation-knight-attack"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit-max" style="text-align: right; padding-right: 65px;">Index 3</div>
+					<div id="animation-knight-green-defend" class="animation-knight-defend"></div>
+				</article>
+				
+				<article class="col">
+					<div class="div-title-unit-max" style="text-align: center;">Index 4</div>
+					<div></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit-max" style="text-align: center;">Index 5</div>
+					<div></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit-max" style="text-align: center;">Index 6</div>
+					<div></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit-max" style="text-align: center;">Index 7</div>
+					<div></div>
+				</article>
+	
+				<article class="col">
+					<div class="div-title-unit-max" style="text-align: left; padding-left: 50px;">Index 8</div>
+					<div id="animation-knight-purple-idle" class="animation-knight-idle"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit-max" style="text-align: left; padding-left: 70px;">Index 9</div>
+					<div id="animation-knight-purple-run" class="animation-knight-run"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit-max" style="text-align: left; padding-left: 55px;">Index 10</div>
+					<div id="animation-knight-purple-attack" class="animation-knight-attack"></div>
+				</article>
+				<article class="col">
+					<div class="div-title-unit-max" style="text-align: left; padding-left: 65px;">Index 11</div>
+					<div id="animation-knight-purple-defend" class="animation-knight-defend"></div>
+				</article>			
+			</section>
+		</div>			
+	</body>
+</html>

@@ -1,0 +1,517 @@
+body { background-color: white; width: 100%; margin: auto;}
+
+.battleField {
+	width: 100%;
+	height: 350px;
+	background-image: url('imagens/classwar - background - castle.png');
+	background-repeat: repeat-x;
+	color: white;
+}
+
+.row {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+}
+
+.col {
+	width: 300px;
+	height: 210px;
+	/*border: 1px dotted #BCC7CF;*/
+}
+
+.div-title-unit {
+	text-shadow: 2px 2px black;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+.div-title-unit-max {
+	text-shadow: 2px 2px black;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+/* dead */
+
+#animation-green-dead  {
+	background-image: url('imagens/green - dead.png');
+	width: 161px;
+	height: 163px;
+	-webkit-animation: animation-cycle-dead 1.0s steps(5) forwards;
+	animation: animation-cycle-dead 1.0s steps(5) forwards;
+}
+
+#animation-purple-dead  {
+	background-image: url('imagens/purple - dead.png');
+	width: 161px;
+	height: 163px;
+	-webkit-animation: animation-cycle-dead 1.0s steps(5) forwards;
+	animation: animation-cycle-dead 1.0s steps(5) forwards;
+}
+
+@-webkit-keyframes animation-cycle-dead {
+	from { background-position: 0px; }
+	to { background-position: -805px; }
+}
+
+@Keyframes animation-cycle-dead {
+	from { background-position: 0px; }
+	to { background-position: -805px; }
+}      
+
+
+/* warrior */
+
+#animation-warrior-green-idle  {
+	background-image: url('imagens/warrior - green - idle.png');
+	float: right;
+}
+
+#animation-warrior-purple-idle  {
+	background-image: url('imagens/warrior - purple - idle.png');
+}
+
+.animation-warrior-idle  {
+	width: 88px;
+	height: 158px;
+	-webkit-animation: animation-cycle-warrior-idle 1.0s steps(6);
+	animation: animation-cycle-warrior-idle 1.0s steps(6);
+}
+
+@-webkit-keyframes animation-cycle-warrior-idle {
+	from { background-position: 0px; }
+	to { background-position: -528px; }
+}
+
+@Keyframes animation-cycle-warrior-idle {
+	from { background-position: 0px; }
+	to { background-position: -528px; }
+}      
+
+#animation-warrior-green-run  {
+	background-image: url('imagens/warrior - green - run.png');
+	float: right;
+}
+
+#animation-warrior-purple-run  {
+	background-image: url('imagens/warrior - purple - run.png');
+}
+
+.animation-warrior-run  {
+	width: 111px;
+	height: 158px;
+	-webkit-animation: animation-cycle-warrior-run 1.0s steps(8);
+	animation: animation-cycle-warrior-run 1.0s steps(8);
+}
+
+@-webkit-keyframes animation-cycle-warrior-run {
+	from { background-position: 0px; }
+	to { background-position: -888px; }
+}
+
+@Keyframes animation-cycle-warrior-run {
+	from { background-position: 0px; }
+	to { background-position: -888px; }
+}      
+
+#animation-warrior-green-attack  {
+	background-image: url('imagens/warrior - green - attack.png');
+	float: right;
+}
+
+#animation-warrior-purple-attack  {
+	background-image: url('imagens/warrior - purple - attack.png');
+}
+
+.animation-warrior-attack  {
+	width: 125px;
+	height: 157px;
+	-webkit-animation: animation-cycle-warrior-attack 1.0s steps(8);
+	animation: animation-cycle-warrior-attack 1.0s steps(8);
+}
+
+@-webkit-keyframes animation-cycle-warrior-attack {
+	from { background-position: 0px; }
+	to { background-position: -1000px; }
+}
+
+@Keyframes animation-cycle-warrior-attack {
+	from { background-position: 0px; }
+	to { background-position: -1000px; }
+}      
+
+#animation-warrior-green-defend  {
+	background-image: url('imagens/warrior - green - defend.png');
+	float: right;
+}
+
+#animation-warrior-purple-defend  {
+	background-image: url('imagens/warrior - purple - defend.png');
+}
+
+.animation-warrior-defend  {
+	width: 94px;
+	height: 153px;
+	-webkit-animation: animation-cycle-warrior-defend 1.0s steps(5);
+	animation: animation-cycle-warrior-defend 1.0s steps(5);
+}
+
+@-webkit-keyframes animation-cycle-warrior-defend {
+	from { background-position: 0px; }
+	to { background-position: -470px; }
+}
+
+@Keyframes animation-cycle-warrior-defend {
+	from { background-position: 0px; }
+	to { background-position: -470px; }
+}      
+
+#animation-warrior-green-dead  {
+	margin-top: 22px;
+	background-image: url('imagens/green - dead.png');
+	float: right;
+}
+
+#animation-warrior-purple-dead  {
+	margin-top: 27px;
+	background-image: url('imagens/purple - dead.png');
+}
+
+.animation-warrior-dead  {
+	width: 161px;
+	height: 163px;
+	-webkit-animation: animation-cycle-warrior-dead 1.0s steps(6) ;
+	animation: animation-cycle-warrior-dead 1.0s steps(6) ;
+}
+
+@-webkit-keyframes animation-cycle-warrior-dead {
+	from { background-position: 0px; }
+	to { background-position: -966px; }
+}
+
+@Keyframes animation-cycle-warrior-dead {
+	from { background-position: 0px; }
+	to { background-position: -966px; }
+}      
+
+/* archer */
+
+#animation-archer-green-idle  {
+	background-image: url('imagens/archer - green - idle.png');
+	float: right;
+}
+
+#animation-archer-purple-idle  {
+	background-image: url('imagens/archer - purple - idle.png');
+}
+
+.animation-archer-idle  {
+	width: 135px;
+	height: 158px;
+	-webkit-animation: animation-cycle-archer-idle 1.0s steps(6);
+	animation: animation-cycle-archer-idle 1.0s steps(6);
+}
+
+@-webkit-keyframes animation-cycle-archer-idle {
+	from { background-position: 0px; }
+	to { background-position: -810px; }
+}
+
+@Keyframes animation-cycle-archer-idle {
+	from { background-position: 0px; }
+	to { background-position: -810px; }
+}      
+
+#animation-archer-green-run  {
+	background-image: url('imagens/archer - green - run.png');
+	float: right;
+}
+
+#animation-archer-purple-run  {
+	background-image: url('imagens/archer - purple - run.png');
+}
+
+.animation-archer-run  {
+	width: 151px;
+	height: 159px;
+	-webkit-animation: animation-cycle-archer-run 1.0s steps(8);
+	animation: animation-cycle-archer-run 1.0s steps(8);
+}
+
+@-webkit-keyframes animation-cycle-archer-run {
+	from { background-position: 0px; }
+	to { background-position: -1208px; }
+}
+
+@Keyframes animation-cycle-archer-run {
+	from { background-position: 0px; }
+	to { background-position: -1208px; }
+}      
+
+#animation-archer-green-attack  {
+	background-image: url('imagens/archer - green - attack.png');
+	float: right;
+}
+
+#animation-archer-purple-attack  {
+	background-image: url('imagens/archer - purple - attack.png');
+}
+
+.animation-archer-attack  {
+	width: 161px;
+	height: 160px;
+	-webkit-animation: animation-cycle-archer-attack 1.0s steps(14);
+	animation: animation-cycle-archer-attack 1.0s steps(14);
+}
+
+@-webkit-keyframes animation-cycle-archer-attack {
+	from { background-position: 0px; }
+	to { background-position: -2254px; }
+}
+
+@Keyframes animation-cycle-archer-attack {
+	from { background-position: 0px; }
+	to { background-position: -2254px; }
+}      
+
+#animation-archer-green-defend  {
+	background-image: url('imagens/archer - green - defend.png');
+	float: right;
+}
+
+#animation-archer-purple-defend  {
+	background-image: url('imagens/archer - purple - defend.png');
+}
+
+.animation-archer-defend  {
+	width: 148px;
+	height: 155px;
+	-webkit-animation: animation-cycle-archer-defend 1.0s steps(5);
+	animation: animation-cycle-archer-defend 1.0s steps(5);
+}
+
+@-webkit-keyframes animation-cycle-archer-defend {
+	from { background-position: 0px; }
+	to { background-position: -740px; }
+}
+
+@Keyframes animation-cycle-archer-defend {
+	from { background-position: 0px; }
+	to { background-position: -740px; }
+}      
+
+/* guardian */
+
+#animation-guardian-green-idle  {
+	background-image: url('imagens/guardian - green - idle.png');
+	float: right;
+}
+
+#animation-guardian-purple-idle  {
+	background-image: url('imagens/guardian - purple - idle.png');
+}
+
+.animation-guardian-idle  {
+	width: 121px;
+	height: 158px;
+	-webkit-animation: animation-cycle-guardian-idle 1.0s steps(6);
+	animation: animation-cycle-guardian-idle 1.0s steps(6);
+}
+
+@-webkit-keyframes animation-cycle-guardian-idle {
+	from { background-position: 0px; }
+	to { background-position: -726px; }
+}
+
+@Keyframes animation-cycle-guardian-idle {
+	from { background-position: 0px; }
+	to { background-position: -726px; }
+}      
+
+#animation-guardian-green-run  {
+	background-image: url('imagens/guardian - green - run.png');
+	float: right;
+}
+
+#animation-guardian-purple-run  {
+	background-image: url('imagens/guardian - purple - run.png');
+}
+
+.animation-guardian-run  {
+	width: 134px;
+	height: 158px;
+	-webkit-animation: animation-cycle-guardian-run 1.0s steps(8);
+	animation: animation-cycle-guardian-run 1.0s steps(8);
+}
+
+@-webkit-keyframes animation-cycle-guardian-run {
+	from { background-position: 0px; }
+	to { background-position: -1072px; }
+}
+
+@Keyframes animation-cycle-guardian-run {
+	from { background-position: 0px; }
+	to { background-position: -1072px; }
+}      
+
+#animation-guardian-green-attack  {
+	background-image: url('imagens/guardian - green - attack.png');
+	float: right;
+}
+
+#animation-guardian-purple-attack  {
+	background-image: url('imagens/guardian - purple - attack.png');
+}
+
+.animation-guardian-attack  {
+	width: 146px;
+	height: 157px;
+	-webkit-animation: animation-cycle-guardian-attack 1.0s steps(8);
+	animation: animation-cycle-guardian-attack 1.0s steps(8);
+}
+
+@-webkit-keyframes animation-cycle-guardian-attack {
+	from { background-position: 0px; }
+	to { background-position: -1168px; }
+}
+
+@Keyframes animation-cycle-guardian-attack {
+	from { background-position: 0px; }
+	to { background-position: -1168px; }
+}      
+
+#animation-guardian-green-defend  {
+	background-image: url('imagens/guardian - green - defend.png');
+}
+
+#animation-guardian-purple-defend  {
+	background-image: url('imagens/guardian - purple - defend.png');
+}
+
+.animation-guardian-defend  {
+	width: 132px;
+	height: 153px;
+	-webkit-animation: animation-cycle-guardian-defend 1.0s steps(5);
+	animation: animation-cycle-guardian-defend 1.0s steps(5);
+}
+
+@-webkit-keyframes animation-cycle-guardian-defend {
+	from { background-position: 0px; }
+	to { background-position: -660px; }
+}
+
+@Keyframes animation-cycle-guardian-defend {
+	from { background-position: 0px; }
+	to { background-position: -660px; }
+}      
+
+/* knight */
+
+#animation-knight-green-idle  {
+	background-image: url('imagens/knight - green - idle.png');
+	float: right;
+}
+
+#animation-knight-purple-idle  {
+	background-image: url('imagens/knight - purple - idle.png');
+}
+
+.animation-knight-idle  {
+	width: 122px;
+	height: 181px;
+	-webkit-animation: animation-cycle-knight-idle 1.0s steps(6);
+	animation: animation-cycle-knight-idle 1.0s steps(6);
+}
+
+@-webkit-keyframes animation-cycle-knight-idle {
+	from { background-position: 0px; }
+	to { background-position: -732px; }
+}
+
+@Keyframes animation-cycle-knight-idle {
+	from { background-position: 0px; }
+	to { background-position: -732px; }
+}      
+
+#animation-knight-green-run  {
+	background-image: url('imagens/knight - green - run.png');
+	float: right;
+}
+
+#animation-knight-purple-run  {
+	background-image: url('imagens/knight - purple - run.png');
+}
+
+.animation-knight-run  {
+	width: 128px;
+	height: 184px;
+	-webkit-animation: animation-cycle-knight-run 1.0s steps(8);
+	animation: animation-cycle-knight-run 1.0s steps(8);
+}
+
+@-webkit-keyframes animation-cycle-knight-run {
+	from { background-position: 0px; }
+	to { background-position: -1024px; }
+}
+
+@Keyframes animation-cycle-knight-run {
+	from { background-position: 0px; }
+	to { background-position: -1024px; }
+}      
+
+#animation-knight-green-attack  {
+	background-image: url('imagens/knight - green - attack.png');
+	float: right;
+}
+
+#animation-knight-purple-attack  {
+	background-image: url('imagens/knight - purple - attack.png');
+}
+
+.animation-knight-attack  {
+	width: 121px;
+	height: 183px;
+	-webkit-animation: animation-cycle-knight-attack 1.0s steps(6);
+	animation: animation-cycle-knight-attack 1.0s steps(6);
+}
+
+@-webkit-keyframes animation-cycle-knight-attack {
+	from { background-position: 0px; }
+	to { background-position: -726px; }
+}
+
+@Keyframes animation-cycle-knight-attack {
+	from { background-position: 0px; }
+	to { background-position: -726px; }
+}      
+
+#animation-knight-green-defend  {
+	background-image: url('imagens/knight - green - defend.png');
+	float: right;
+}
+
+#animation-knight-purple-defend  {
+	background-image: url('imagens/knight - purple - defend.png');
+}
+
+.animation-knight-defend  {
+	width: 140px;
+	height: 184px;
+	-webkit-animation: animation-cycle-knight-defend 1.0s steps(6);
+	animation: animation-cycle-knight-defend 1.0s steps(6);
+}
+
+@-webkit-keyframes animation-cycle-knight-defend {
+	from { background-position: 0px; }
+	to { background-position: -840px; }
+}
+
+@Keyframes animation-cycle-knight-defend {
+	from { background-position: 0px; }
+	to { background-position: -840px; }
+}      
+

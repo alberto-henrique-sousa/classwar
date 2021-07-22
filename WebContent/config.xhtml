@@ -1,0 +1,77 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+	<f:view contentType="text/html" encoding="UTF-8"> 
+		<h:head>
+			<title>ClassWar</title>
+			<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			<meta http-equiv="pragma" content="no-cache" />
+			<meta http-equiv="expires" content="0" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+			<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+			<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+      					
+			<h:outputStylesheet library="css" name="standard.css" />
+		</h:head>
+		<h:body styleClass="bodyIndex">		
+			<div class="divOptions">
+				<h:form id="formGame">
+				    <div class="panelOptions panelEditor">
+			            <p:outputPanel id="panel">
+			                <h:panelGrid columns="3" cellspacing="10" >
+			                	
+			                	<p:outputLabel value="Equipe 1:" for="nameTeam1" styleClass="panelOptionsText"/>
+			                	<p:inputText id="nameTeam1" value="#{engineBean.nameTeam1}" widgetVar="nameTeam1" style="width: 400px" required="true" maxlength="80" disabled="#{engineBean.open}"/>
+			                	<p:message for="nameTeam1" display="tooltip"/>
+			                	
+			                	<p:outputLabel value="Equipe 2:" for="nameTeam2" styleClass="panelOptionsText"/>
+			                	<p:inputText id="nameTeam2" value="#{engineBean.nameTeam2}" widgetVar="nameTeam2" style="width: 400px" required="true" maxlength="80" disabled="#{engineBean.open}"/>
+			                	<p:message for="nameTeam2" display="tooltip"/>
+			                	
+			                	<p:outputLabel value="Jogadores:" styleClass="panelOptionsText"/>
+								<p:selectOneButton id="totalPlayers" value="#{engineBean.settings.totalPlayers}" disabled="#{engineBean.open}">
+						            <f:selectItem itemLabel="1x1" itemValue="1" />
+						            <f:selectItem itemLabel="2x2" itemValue="2" />
+						            <f:selectItem itemLabel="3x3" itemValue="3" />
+						            <f:selectItem itemLabel="4x4" itemValue="4" />
+						        </p:selectOneButton>			                	
+						        <p:outputLabel value=""/>
+
+			                	<p:outputLabel value="Recursos:" styleClass="panelOptionsText"/>
+								<h:panelGrid columns="3">
+									<p:inputNumber value="#{engineBean.settings.gold}" minValue="0" maxValue="20000" disabled="#{engineBean.open}"/>
+									<h:outputText id="totalGoldText" value="(Gold) por jogador" style="margin-left: 10px;" styleClass="panelOptionsText"/>
+							    </h:panelGrid> 			                	
+						        <p:outputLabel value=""/>			                	
+			                	
+			                	<p:outputLabel value="Ações:" styleClass="panelOptionsText"/>
+								<h:panelGrid columns="3">
+									<p:inputNumber value="#{engineBean.settings.actionsRound}" minValue="0" maxValue="16" disabled="#{engineBean.open}"/>
+									<h:outputText id="actionsRoundText" value="por turno e jogador" style="margin-left: 10px;" styleClass="panelOptionsText"/>
+							    </h:panelGrid> 			                	
+						        <p:outputLabel value=""/>			                	
+			                	
+			                	<p:outputLabel value=""/>
+			                	<p:outputPanel id="toolbarButtons" styleClass="panelButtonsConfig">			                	
+									<p:commandLink id="btnOpen" actionListener="#{engineBean.open}" update="formGame">
+									    <h:graphicImage library="images" name="buttons/button-#{engineBean.titleBtnOpen()}.png"  height="45" width="92"/>
+									</p:commandLink>				        						                				                	
+				                </p:outputPanel>			                	
+			                	<p:outputLabel value=""/>			                	
+			                	
+			                	<p:outputLabel value="Status:" styleClass="panelOptionsText"/>
+			                	<p:outputLabel id="statusRoom" value="#{engineBean.statusRoom()}" styleClass="panelOptionsText"/>
+			                	<p:outputLabel value=""/>
+
+			                </h:panelGrid>
+		                	<p:focus for="nameTeam1"/>
+			            </p:outputPanel>
+		            </div>				 
+				</h:form>
+			</div>
+					
+		</h:body>
+	</f:view>	
+</html>
